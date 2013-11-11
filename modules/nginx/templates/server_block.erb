@@ -1,0 +1,12 @@
+<% indent=" "*6 -%>
+server {
+<%= indent -%>listen   <%= @listen %>; ## listen for ipv4; this line is default and implied
+
+<%= indent -%>root <%= @root %>;
+<%= indent -%>index <%= @index %>;
+
+<% unless @server_name.nil? -%>
+<%= indent -%># Make site accessible from http://localhost/
+<%= indent -%>server_name <%= @server_name %>;
+<% end -%>
+}
